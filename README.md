@@ -161,7 +161,6 @@ pipeline-etl-sesi-senai/
 **Lucas Vicentini**
 
 - 🔗 LinkedIn: [https://www.linkedin.com/in/lucas-vicentini-8226501b3/)
-- 📧 Email: seu-email@example.com
 - 💼 Engenheiro de Dados | SQL • Python • PostgreSQL • Power BI
 
 ---
