@@ -1,3 +1,8 @@
+## 📊 Preview do Dashboard
+
+![Dashboard](dashboards/dashboard_incidentes.png)
+
+
 # 📊 Pipeline ETL - Análise de Incidentes SESI/SENAI
 
 Pipeline end-to-end de Engenharia de Dados processando **5.894 incidentes** de infraestrutura com objetivo de reduzir downtime e identificar padrões críticos.
