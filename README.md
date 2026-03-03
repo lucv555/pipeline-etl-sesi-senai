@@ -1,10 +1,3 @@
-## 📊 Preview do Dashboard
-
-![Dashboard de Incidentes](dashboards/dashboard_incidentes.png)
-*Dashboard interativo com KPIs principais, Top 10 unidades críticas (dados anonimizados) e evolução temporal mostrando tendências de incidentes ao longo do tempo.*
-
----
-
 # 📊 Pipeline ETL - Análise de Incidentes SESI/SENAI
 
 Pipeline end-to-end de Engenharia de Dados processando **5.894 incidentes** de infraestrutura com objetivo de reduzir downtime e identificar padrões críticos.
@@ -27,9 +20,17 @@ A equipe operacional registra incidentes de infraestrutura no **PowerApps**. Est
 
 ---
 
+## 📊 Preview do Dashboard
+
+![Dashboard de Incidentes](dashboards/dashboard_incidentes.png)
+
+*Dashboard interativo com KPIs principais, Top 10 unidades críticas (dados anonimizados) e evolução temporal mostrando tendências de incidentes ao longo do tempo.*
+
+---
+
 ## 🏗️ Arquitetura
 
-\```
+```
 PowerApps (Sistema Operacional)
     ↓
 Exportação → Excel (Dados Brutos)
@@ -40,7 +41,7 @@ Python (Pandas) - ETL
     └─ Modelagem dimensional
     ↓
 PostgreSQL (Data Warehouse)
-    ├── Star Schema
+    ├── Star Schema (Kimball)
     ├── dim_tempo
     ├── dim_unidades  
     ├── dim_tipos_problema
@@ -52,52 +53,9 @@ Power BI (Dashboards Interativos)
     ├─ Top 10 unidades
     ├─ Evolução temporal
     └─ Análise de SLA
-\```
 ```
 
-4. **Commit changes**
-
 ---
-
-### **PASSO 3: Upload Script Python (5 min)**
-
-1. Vai em https://github.com/lucv555/pipeline-etl-sesi-senai/tree/main/scripts
-2. **Add file → Upload files**
-3. Arrasta `script5_etl_pipeline_PUBLICO.py` (da pasta do seu projeto)
-4. **Commit changes**
-
----
-
-### **PASSO 4: Upload Dados Anonimizados (5 min)**
-
-1. Vai em https://github.com/lucv555/pipeline-etl-sesi-senai/tree/main/dados
-2. **Add file → Upload files**
-3. Arrasta `Incidentes_ANONIMIZADO.xlsx`
-4. **Commit changes**
-
----
-
-### **PASSO 5: Adicionar Projeto no LinkedIn (5 min)**
-
-1. **LinkedIn → Perfil → Projetos**
-2. **Adicionar projeto**
-3. Preenche:
-```
-Nome: 
-Pipeline ETL - Análise de Incidentes SESI/SENAI
-
-URL:
-https://github.com/lucv555/pipeline-etl-sesi-senai
-
-Descrição:
-Pipeline ETL end-to-end processando 5.894 incidentes de infraestrutura registrados no PowerApps. 
-Tecnologias: Python, PostgreSQL (Star Schema), Power BI.
-Resultados: Identificadas 38.5% de violações de SLA, mapeadas top 10 unidades críticas, 
-redução de 70% no tempo de análise (de 3h para 5 minutos).
-
-Data de início: Janeiro 2026
-Data de término: Fevereiro 2026
-```
 
 ## 🛠️ Stack Técnica
 
@@ -120,13 +78,13 @@ Data de término: Fevereiro 2026
 | **Violações de SLA** | 38.5% |
 | **Disponibilidade média** | 79.2% |
 | **Downtime total** | 29.4K horas |
-| **Redução tempo de análise** | 70% |
 
 ---
 
 ## 🚀 Como Executar
 
 ### Pré-requisitos
+
 ```bash
 Python 3.11+
 PostgreSQL 16+
@@ -134,6 +92,7 @@ Power BI Desktop
 ```
 
 ### Instalação
+
 ```bash
 # Clone o repositório
 git clone https://github.com/lucv555/pipeline-etl-sesi-senai.git
@@ -146,6 +105,7 @@ pip install pandas pg8000 openpyxl
 ```
 
 ### Configuração do Banco
+
 ```sql
 -- No PostgreSQL, crie o database
 CREATE DATABASE incidentes_dw;
@@ -154,6 +114,7 @@ CREATE DATABASE incidentes_dw;
 ```
 
 ### Executar o Pipeline
+
 ```bash
 python scripts/script5_etl_pipeline.py
 ```
@@ -165,7 +126,7 @@ python scripts/script5_etl_pipeline.py
 ### KPIs Principais
 
 - **Total de Incidentes:** 5.894
-- **Downtime Total:** 29.4K horas
+- **Downtime Total:** 29.4K horas  
 - **SLA Violado:** 38.5%
 - **Disponibilidade Média:** 79.2%
 
@@ -174,7 +135,7 @@ python scripts/script5_etl_pipeline.py
 1. 📈 Evolução temporal de incidentes
 2. 📊 Top 10 unidades críticas
 3. 🔥 Distribuição por tipo de problema
-4. 🗓️ Mapa de calor: horários de pico
+4. 🗓️ Análise de padrões de downtime
 
 ---
 
@@ -187,6 +148,7 @@ python scripts/script5_etl_pipeline.py
 - ✅ Análise de dados em larga escala
 - ✅ Tratamento de dados faltantes
 - ✅ Otimização de queries SQL
+- ✅ Anonimização de dados sensíveis
 
 ---
 
@@ -194,13 +156,14 @@ python scripts/script5_etl_pipeline.py
 
 Os dados originais foram **anonimizados** para proteger informações confidenciais:
 
-- **Unidades:** Nomes substituídos por identificadores genéricos.
+- **Unidades:** Nomes substituídos por identificadores genéricos (ex: SEDE_142, CFP_089)
 - **Tipos de problema:** Categorizados genericamente (REDE_01, HARDWARE_02)
 - **Estatísticas preservadas:** Volumes, padrões e métricas são idênticos aos dados reais
 
 ---
 
 ## 📁 Estrutura do Projeto
+
 ```
 pipeline-etl-sesi-senai/
 ├── README.md
@@ -222,12 +185,14 @@ pipeline-etl-sesi-senai/
 
 **Lucas Vicentini**
 
-- 🔗 LinkedIn: [https://www.linkedin.com/in/lucas-vicentini-8226501b3/)
+- 🔗 LinkedIn: [linkedin.com/in/lucas-vicentini-8226501b3](https://www.linkedin.com/in/lucas-vicentini-8226501b3/)
 - 💼 Engenheiro de Dados | SQL • Python • PostgreSQL • Power BI
 
 ---
 
+## 📄 Licença
 
+Este projeto está sob a licença MIT.
 
 ---
 
