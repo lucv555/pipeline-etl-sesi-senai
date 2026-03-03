@@ -15,32 +15,40 @@ Pipeline end-to-end de Engenharia de Dados processando **5.894 incidentes** de i
 
 ## 🎯 Objetivo do Projeto
 
-Automatizar a análise de incidentes de TI que antes era manual (Excel), criando um pipeline ETL completo que:
+A equipe operacional registra incidentes de infraestrutura no **PowerApps**. Este projeto criou um pipeline ETL para transformar esses dados em insights acionáveis:
 
-- ✅ Processa dados históricos de 5.894 incidentes
+- ✅ Extrai e processa 5.894 incidentes históricos
 - ✅ Identifica violações de SLA (38.5% dos casos)
 - ✅ Mapeia top 10 unidades críticas
-- ✅ Reduz tempo de análise em 70%
+- ✅ Automatiza análise que levava 3 horas → agora 5 minutos
 
 ---
 
 ## 🏗️ Arquitetura
 ```
-Excel (5.894 registros)
+PowerApps (Sistema Operacional)
+    ↓
+Exportação → Excel (Dados Brutos)
     ↓
 Python (Pandas) - ETL
+    ├─ Limpeza de dados
+    ├─ Transformações
+    └─ Modelagem dimensional
     ↓
-PostgreSQL (Star Schema)
+PostgreSQL (Data Warehouse)
+    ├── Star Schema
     ├── dim_tempo
     ├── dim_unidades  
     ├── dim_tipos_problema
     ├── fato_incidentes
     └── fato_disponibilidade_diaria
     ↓
-Power BI (Dashboards)
+Power BI (Dashboards Interativos)
+    ├─ KPIs em tempo real
+    ├─ Top 10 unidades
+    ├─ Evolução temporal
+    └─ Análise de SLA
 ```
-
----
 
 ## 🛠️ Stack Técnica
 
