@@ -27,6 +27,7 @@ A equipe operacional registra incidentes de infraestrutura no **PowerApps**. Est
 *Dashboard interativo com KPIs principais, Top 10 unidades críticas (dados anonimizados) e evolução temporal mostrando tendências de incidentes ao longo do tempo.*
 
 ---
+
 ## 🏗️ Star Schema
 ```mermaid
 erDiagram
@@ -63,7 +64,7 @@ erDiagram
         varchar categoria
         varchar subcategoria
     }
-
+---
 
 
 ## 🏗️ Arquitetura
