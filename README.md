@@ -27,6 +27,44 @@ A equipe operacional registra incidentes de infraestrutura no **PowerApps**. Est
 *Dashboard interativo com KPIs principais, Top 10 unidades críticas (dados anonimizados) e evolução temporal mostrando tendências de incidentes ao longo do tempo.*
 
 ---
+## 🏗️ Star Schema
+```mermaid
+erDiagram
+    dim_tempo ||--o{ fato_incidentes : tempo_key
+    dim_unidades ||--o{ fato_incidentes : unidade_key
+    dim_tipos_problema ||--o{ fato_incidentes : tipo_problema_key
+    
+    fato_incidentes {
+        int incidente_key PK
+        int tempo_key FK
+        int unidade_key FK
+        int tipo_problema_key FK
+        decimal downtime_minutos
+        decimal disponibilidade_percentual
+        boolean foi_sla_violado
+    }
+    
+    dim_tempo {
+        int tempo_key PK
+        date data
+        int ano
+        int mes
+        int dia
+    }
+    
+    dim_unidades {
+        int unidade_key PK
+        varchar nome_unidade
+        varchar tipo_unidade
+    }
+    
+    dim_tipos_problema {
+        int tipo_problema_key PK
+        varchar categoria
+        varchar subcategoria
+    }
+
+
 
 ## 🏗️ Arquitetura
 
