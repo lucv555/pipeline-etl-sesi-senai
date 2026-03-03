@@ -64,7 +64,7 @@ erDiagram
         varchar categoria
         varchar subcategoria
     }
----
+```
 
 
 ## 🏗️ Arquitetura
