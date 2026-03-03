@@ -1,7 +1,6 @@
 ## 📊 Preview do Dashboard
 
 ![Dashboard de Incidentes](dashboards/dashboard_incidentes.png)
-
 *Dashboard interativo com KPIs principais, Top 10 unidades críticas (dados anonimizados) e evolução temporal mostrando tendências de incidentes ao longo do tempo.*
 
 ---
@@ -18,13 +17,13 @@ Pipeline end-to-end de Engenharia de Dados processando **5.894 incidentes** de i
 
 ## 🎯 Objetivo do Projeto
 
-A equipe operacional registra incidentes de infraestrutura no **PowerApps**. Este projeto criou um pipeline ETL para transformar esses dados em insights acionáveis:
+A equipe operacional registra incidentes de infraestrutura no **PowerApps**. Este projeto criou um pipeline ETL para transformar esses dados em insights acionáveis e disponíveis 24/7:
 
 - ✅ Processa e estrutura 5.894 incidentes históricos
 - ✅ Identifica violações de SLA (38.5% dos casos)
 - ✅ Mapeia top 10 unidades críticas
-- ✅ Dashboards interativos com atualização automática
-- ✅ Elimina necessidade de análise manual recorrente
+- ✅ Dashboards interativos com atualização sob demanda
+- ✅ Elimina necessidade de análise manual no PowerApps + Excel
 
 ---
 
