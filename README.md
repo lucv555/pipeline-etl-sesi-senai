@@ -1,7 +1,10 @@
 ## 📊 Preview do Dashboard
 
-![Dashboard](dashboards/dashboard_incidentes.png)
+![Dashboard de Incidentes](dashboards/dashboard_incidentes.png)
 
+*Dashboard interativo com KPIs principais, Top 10 unidades críticas (dados anonimizados) e evolução temporal mostrando tendências de incidentes ao longo do tempo.*
+
+---
 
 # 📊 Pipeline ETL - Análise de Incidentes SESI/SENAI
 
@@ -17,15 +20,17 @@ Pipeline end-to-end de Engenharia de Dados processando **5.894 incidentes** de i
 
 A equipe operacional registra incidentes de infraestrutura no **PowerApps**. Este projeto criou um pipeline ETL para transformar esses dados em insights acionáveis:
 
-- ✅ Extrai e processa 5.894 incidentes históricos
+- ✅ Processa e estrutura 5.894 incidentes históricos
 - ✅ Identifica violações de SLA (38.5% dos casos)
 - ✅ Mapeia top 10 unidades críticas
-- ✅ Automatiza análise que levava 3 horas → agora 5 minutos
+- ✅ Dashboards interativos com atualização automática
+- ✅ Elimina necessidade de análise manual recorrente
 
 ---
 
 ## 🏗️ Arquitetura
-```
+
+\```
 PowerApps (Sistema Operacional)
     ↓
 Exportação → Excel (Dados Brutos)
@@ -48,6 +53,51 @@ Power BI (Dashboards Interativos)
     ├─ Top 10 unidades
     ├─ Evolução temporal
     └─ Análise de SLA
+\```
+```
+
+4. **Commit changes**
+
+---
+
+### **PASSO 3: Upload Script Python (5 min)**
+
+1. Vai em https://github.com/lucv555/pipeline-etl-sesi-senai/tree/main/scripts
+2. **Add file → Upload files**
+3. Arrasta `script5_etl_pipeline_PUBLICO.py` (da pasta do seu projeto)
+4. **Commit changes**
+
+---
+
+### **PASSO 4: Upload Dados Anonimizados (5 min)**
+
+1. Vai em https://github.com/lucv555/pipeline-etl-sesi-senai/tree/main/dados
+2. **Add file → Upload files**
+3. Arrasta `Incidentes_ANONIMIZADO.xlsx`
+4. **Commit changes**
+
+---
+
+### **PASSO 5: Adicionar Projeto no LinkedIn (5 min)**
+
+1. **LinkedIn → Perfil → Projetos**
+2. **Adicionar projeto**
+3. Preenche:
+```
+Nome: 
+Pipeline ETL - Análise de Incidentes SESI/SENAI
+
+URL:
+https://github.com/lucv555/pipeline-etl-sesi-senai
+
+Descrição:
+Pipeline ETL end-to-end processando 5.894 incidentes de infraestrutura registrados no PowerApps. 
+Tecnologias: Python, PostgreSQL (Star Schema), Power BI.
+Resultados: Identificadas 38.5% de violações de SLA, mapeadas top 10 unidades críticas, 
+redução de 70% no tempo de análise (de 3h para 5 minutos).
+
+Data de início: Janeiro 2026
+Data de término: Fevereiro 2026
 ```
 
 ## 🛠️ Stack Técnica
